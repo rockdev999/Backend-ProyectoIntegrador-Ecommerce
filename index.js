@@ -1,6 +1,6 @@
 import express from "express";
-import { conexion } from "./db.js";
-import { userRouter } from "./routes/user.routes.js";
+import { conexion } from "./src/db.js";
+import { userRouter } from "./src/routes/user.routes.js";
 import cors from "cors";
 
 const app = express();
