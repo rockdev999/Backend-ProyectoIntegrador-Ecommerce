@@ -29,12 +29,12 @@ export const createUsers = async (req, res) => {
 
 export const getUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    const result = await Users.findById(id);
-
-    res.status(302).json(result);
+    const { email } = req.params;
+    const result = await Users.findOne({ email });
+    res.status(200).json(result);
   } catch (error) {
     console.error(error);
+    res.status(500).json({ message: "Error fetching user data" });
   }
 };
 
